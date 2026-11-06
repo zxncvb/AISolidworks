@@ -31,7 +31,7 @@ jobs:
           upstream="$RUNNER_TEMP/upstream"
           git clone --filter=blob:none --no-checkout "https://github.com/$SOURCE_REPOSITORY.git" "$upstream"
           git -C "$upstream" checkout --detach "$SOURCE_COMMIT"
-          rsync -a --delete --exclude='.git/' "$upstream/" ./
+          rsync -a --delete --exclude='.git/' --exclude='.github/workflows/' "$upstream/" ./
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
