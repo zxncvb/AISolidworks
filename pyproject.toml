@@ -8,6 +8,9 @@ license = { text = "MIT" }
 authors = [
   { name = "wzyn20051216" }
 ]
+maintainers = [
+  { name = "zxncvb" }
+]
 dependencies = [
   "mcp>=1.27,<2",
   "pydantic>=2.0",
@@ -20,9 +23,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/wzyn20051216/solidworks-automation-skill"
-Repository = "https://github.com/wzyn20051216/solidworks-automation-skill"
-Issues = "https://github.com/wzyn20051216/solidworks-automation-skill/issues"
+Homepage = "https://github.com/zxncvb/AISolidworks"
+Repository = "https://github.com/zxncvb/AISolidworks"
+Issues = "https://github.com/zxncvb/AISolidworks/issues"
 
 [tool.uv]
 package = false

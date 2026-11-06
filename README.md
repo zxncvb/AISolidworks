@@ -1,6 +1,10 @@
-# SolidWorks Automation Skill
+# AISolidworks · SolidWorks AI 自动化工具集
 
-**AI Skill + MCP toolkit for reliable desktop CAD automation.**
+**面向 SolidWorks 的 AI Skill、MCP 与 CAD Studio 工具集。**
+
+项目由 [zxncvb](https://github.com/zxncvb) 维护，仓库地址：[zxncvb/AISolidworks](https://github.com/zxncvb/AISolidworks)。本仓库基于上游 SolidWorks Automation Skill 持续整理与适配，原作者信息和 MIT 许可证见 [来源说明](THIRD_PARTY_NOTICES.md)。技能标识与命令名保留兼容。
+
+相关项目：[AICreo · Creo AI 自动化技能包](https://github.com/zxncvb/AICreo)。
 
 让 Codex、Claude、Cursor 等 Agent 通过自然语言调用真实 CAD 软件，并对执行结果进行验证与追踪。
 
@@ -8,16 +12,16 @@
 
 工具调用成功，不代表任务真的完成；需要 Review 的任务会经过结果验证后再交付。
 
-当前发布版本为 **v2.0.1**：技能 ZIP、CAD Studio 安装版与便携版统一版本并包含同版运行时。下载入口和升级说明见 [v2.0.1 发布说明](docs/releases/v2.0.1.md)。
+当前源码包含 **v2.0.1** 版本的技能与 CAD Studio 运行时。本仓库可下载的安装包以 [AISolidworks Releases](https://github.com/zxncvb/AISolidworks/releases) 中实际发布的附件为准；尚无附件时请使用下方源码安装方式。[v2.0.1 版本说明](docs/releases/v2.0.1.md)保留上游版本背景，不代表本仓库已经发布同名安装包。
 
 CAD Studio 会对各生产执行器统一检查交付文件是否为本轮新增或内容已变化；旧文件拒绝交付，证据不足转为待复核。扫描范围、兼容性与验证方法见[本轮交付门禁](references/delivery-freshness.md)。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![GitHub Release](https://img.shields.io/github/v/release/wzyn20051216/solidworks-automation-skill)](https://github.com/wzyn20051216/solidworks-automation-skill/releases)
-[![GitHub Stars](https://img.shields.io/github/stars/wzyn20051216/solidworks-automation-skill?style=flat)](https://github.com/wzyn20051216/solidworks-automation-skill)
+[![GitHub Release](https://img.shields.io/github/v/release/zxncvb/AISolidworks)](https://github.com/zxncvb/AISolidworks/releases)
+[![GitHub Stars](https://img.shields.io/github/stars/zxncvb/AISolidworks?style=flat)](https://github.com/zxncvb/AISolidworks)
 [![MCP](https://img.shields.io/badge/MCP-stdio--server-blue)](mcp-server/README.md)
-[![CI](https://github.com/wzyn20051216/solidworks-automation-skill/actions/workflows/windows-release.yml/badge.svg)](https://github.com/wzyn20051216/solidworks-automation-skill/actions/workflows/windows-release.yml)
+[![CI](https://github.com/zxncvb/AISolidworks/actions/workflows/windows-release.yml/badge.svg)](https://github.com/zxncvb/AISolidworks/actions/workflows/windows-release.yml)
 
 ```text
 User → Agent (Codex / Claude / Cursor) → Skill / MCP → Execution Core → CAD → Artifacts + Evidence
@@ -82,7 +86,7 @@ python scripts/sw_capability_probe.py  # 类型库与能力清单
 ### Option 1 — Skill
 
 ```powershell
-npx github:wzyn20051216/solidworks-automation-skill --target claude
+npx github:zxncvb/AISolidworks --target claude
 ```
 
 该命令获取本仓库并执行根目录的 `install.js`（`package.json` 的 `bin` 入口）。
@@ -113,8 +117,8 @@ npx github:wzyn20051216/solidworks-automation-skill --target claude
 ### Option 2 — MCP
 
 ```powershell
-git clone https://github.com/wzyn20051216/solidworks-automation-skill.git
-cd solidworks-automation-skill
+git clone https://github.com/zxncvb/AISolidworks.git
+cd AISolidworks
 python -m pip install -r requirements.txt -r mcp-server/requirements.txt
 node mcp-server/register_all_ai_mcp.js --help          # 查看全部参数
 node mcp-server/register_all_ai_mcp.js --clients codex,claude-code,cursor
@@ -124,7 +128,7 @@ node mcp-server/register_all_ai_mcp.js --clients codex,claude-code,cursor
 
 ### Option 3 — CAD Studio 桌面版
 
-从 [GitHub Releases](https://github.com/wzyn20051216/solidworks-automation-skill/releases) 下载 Windows 安装包。
+在 [AISolidworks Releases](https://github.com/zxncvb/AISolidworks/releases) 查看实际发布的 Windows 安装包；若暂未提供附件，请使用 Skill 或 MCP 源码安装方式。桌面自动更新通道的迁移需另行核对签名与发布配置，见 [来源与维护说明](THIRD_PARTY_NOTICES.md)。
 
 桌面端启动本地执行器时，如果 Windows 没有可用的 Python 3.10+，会尝试通过 winget 为当前用户安装 Python 3.12；无法安装时显示错误。环境诊断仍只读。SolidWorks 必须由用户另行安装并具备许可；API 查证所需的 7-Zip、Python 包和可验证的本地 API Help 按需自动配置，详情见 [`references/api-lookup.md`](references/api-lookup.md)。
 
@@ -197,7 +201,9 @@ Artifacts + Evidence
 
 ---
 
-## Reliability
+## Reliability · 上游验证记录与边界
+
+本节保留上游的离线回归、CI 与真机验收记录，用于说明能力来源和验证范围；其中的工作流通过情况、分支保护与测试数量不代表本仓库当前运行结果。本仓库实际状态请查看 [Actions](https://github.com/zxncvb/AISolidworks/actions)，并在目标机器上重新验证 CAD 操作。
 
 当前附带 **43 个 deterministic reliability scenarios**（12 nominal + 31 robustness），
 覆盖正常执行、故障注入、后端回退、能力缺口与策略门禁；由 `golden-workflows.yaml` 的 12 个 workflow 派生。
@@ -327,22 +333,22 @@ Artifacts + Evidence
 
 ## License & Community
 
-[MIT](LICENSE) · [GitHub Issues](https://github.com/wzyn20051216/solidworks-automation-skill/issues) · [Star History](https://star-history.com/#wzyn20051216/solidworks-automation-skill&Date)
+[MIT](LICENSE) · [GitHub Issues](https://github.com/zxncvb/AISolidworks/issues) · [Star History](https://star-history.com/#zxncvb/AISolidworks&Date)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=wzyn20051216/solidworks-automation-skill&amp;type=Date&amp;theme=dark">
-  <img src="https://api.star-history.com/svg?repos=wzyn20051216/solidworks-automation-skill&amp;type=Date" alt="SolidWorks Automation Skill 星标趋势" width="960">
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=zxncvb/AISolidworks&amp;type=Date&amp;theme=dark">
+  <img src="https://api.star-history.com/svg?repos=zxncvb/AISolidworks&amp;type=Date" alt="SolidWorks Automation Skill 星标趋势" width="960">
 </picture>
 
 ---
 
 ## English
 
-**SolidWorks Automation Skill** is an AI Skill + MCP toolkit for reliable desktop CAD automation. Codex, Claude, Cursor, and other agents drive real SolidWorks / CAD workflows through natural language, with verification, deterministic recovery decisions, and execution tracing. Three peer entry points — Skill, MCP, and CAD Studio — share one capability registry (`capabilities.yaml`). **Choose one; no extra runtime service is required.** See Quick Start above.
+**AISolidworks** is an AI Skill + MCP toolkit for desktop CAD automation, maintained at [zxncvb/AISolidworks](https://github.com/zxncvb/AISolidworks) and based on the upstream SolidWorks Automation Skill project. Codex, Claude, Cursor, and other agents drive SolidWorks / CAD workflows through natural language, with verification and execution tracing. Skill, MCP, and CAD Studio share one capability registry (`capabilities.yaml`). See Quick Start above and [source attribution](THIRD_PARTY_NOTICES.md).
 
 ---
 
-<sub>关注抖音 @balance. · 嵌入式开发、SolidWorks 自动化和 AI 辅助工程实践持续更新</sub>
+<sub>项目维护与反馈：GitHub @zxncvb · AISolidworks</sub>
 
 ### 装配干涉检查 API
 

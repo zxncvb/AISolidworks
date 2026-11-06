@@ -2,7 +2,7 @@
   "$schema": "https://github.com/anthropics/mcpb/raw/main/schemas/mcpb-manifest-v0.4.schema.json",
   "manifest_version": "0.4",
   "name": "solidworks-automation-skill",
-  "display_name": "SolidWorks Automation Skill",
+  "display_name": "AISolidworks",
   "version": "2.0.0",
   "description": "Local Windows MCP server for controlled SolidWorks, CAD Studio, DFM, routing, FEA, and open-format CAD automation.",
   "long_description": "SolidWorks Automation Skill exposes a local stdio MCP server for Windows desktop CAD workflows. It provides guarded SolidWorks COM tools for parts, assemblies, drawings, exports, reviews, mates, holes, Motion Study checks, and batch delivery, plus headless CAD Studio tools for open-format generation, DFM checks, routing review, FEA preparation, and geometry preflight. Native SolidWorks tools require a local licensed SolidWorks installation; headless open-format tools can run without SolidWorks where their Python dependencies are available.",
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wzyn20051216/solidworks-automation-skill"
+    "url": "https://github.com/zxncvb/AISolidworks"
   },
-  "homepage": "https://github.com/wzyn20051216/solidworks-automation-skill#readme",
-  "documentation": "https://github.com/wzyn20051216/solidworks-automation-skill/blob/main/mcp-server/README.md",
-  "support": "https://github.com/wzyn20051216/solidworks-automation-skill/issues",
+  "homepage": "https://github.com/zxncvb/AISolidworks#readme",
+  "documentation": "https://github.com/zxncvb/AISolidworks/blob/main/mcp-server/README.md",
+  "support": "https://github.com/zxncvb/AISolidworks/issues",
   "server": {
     "type": "python",
     "entry_point": "mcp-server/server.py",

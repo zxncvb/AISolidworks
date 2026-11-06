@@ -1,7 +1,7 @@
 ---
 name: solidworks-automation
 description: "SolidWorks CAD 自动化技能，优先覆盖经验证的零件、孔槽、装配、工程图、导出和交付复核；所有能力等级以 capabilities.yaml 为准，未验证能力必须走人工复核。"
-metadata: { "openclaw": { "homepage": "https://github.com/wzyn20051216/solidworks-automation-skill", "os": ["win32"], "requires": { "anyBins": ["python", "py"] } } }
+metadata: { "openclaw": { "homepage": "https://github.com/zxncvb/AISolidworks", "os": ["win32"], "requires": { "anyBins": ["python", "py"] } } }
 ---
 
 # SolidWorks 自动化技能

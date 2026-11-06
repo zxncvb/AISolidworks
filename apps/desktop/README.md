@@ -3,8 +3,8 @@
 > **⚠️ 遗留原型（legacy）**
 >
 > 当前正式桌面产品是 **`apps/workbench-ui/`**（Tauri + React），从
-> [GitHub Releases](https://github.com/wzyn20051216/solidworks-automation-skill/releases)
-> 获取安装包。本目录是更早的 PySide6 原型，**不再作为发布目标**，其界面与交互不代表当前产品。
+> [GitHub Releases](https://github.com/zxncvb/AISolidworks/releases)
+> 查看实际发布的安装包；若暂无附件，按 [根目录 README](../../README.md) 使用源码安装。本目录是更早的 PySide6 原型，**不再作为发布目标**，其界面与交互不代表当前产品。
 >
 > **请勿删除。** `scripts/build_windows_release.ps1` 仍依赖本目录下的
 > `apps/desktop/cad_workbench/queue_worker.py` 与

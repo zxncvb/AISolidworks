@@ -17,7 +17,7 @@ const path = require('path');
 const { execFileSync, spawnSync } = require('child_process');
 
 const SKILL_NAME = 'solidworks-automation';
-const REPO_URL = 'https://github.com/wzyn20051216/solidworks-automation-skill.git';
+const REPO_URL = 'https://github.com/zxncvb/AISolidworks.git';
 const MIN_NODE_MAJOR = 20;
 
 /** @brief 支持的客户端 -> 其 skills 目录（相对 home 的路径片段）。 */

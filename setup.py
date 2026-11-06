@@ -47,7 +47,7 @@ setup(
     description="Python automation toolkit for SolidWorks API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/wzyn20051216/solidworks-automation-skill",
+    url="https://github.com/zxncvb/AISolidworks",
     license="MIT",
     packages=["solidworks_automation"],
     package_dir={"solidworks_automation": "scripts"},

@@ -1,12 +1,14 @@
 # 贡献指南 / Contributing Guide
 
-感谢你对 SolidWorks Automation Skill 项目的关注!
+感谢你对 AISolidworks 项目的关注！当前仓库为 [zxncvb/AISolidworks](https://github.com/zxncvb/AISolidworks)，项目维护与反馈由 [@zxncvb](https://github.com/zxncvb) 接收。
 
 ## 治理与维护模式
 
+下列治理模式与截至 2026-10-27 的规则集记录来自上游项目，保留用于理解原有设计。它们不代表 AISolidworks 已配置相同的分支保护、CI 或签名证明；当前仓库权限与检查结果以本仓库 GitHub 设置和 Actions 为准。历史证据中的上游仓库地址保留原样。
+
 本仓库采用**单人核心维护 + 开放社区贡献**模式。任何外部开发者都可以通过 Fork + Pull Request 提交代码，由仓库 owner 评估代码质量、测试证据和实际价值后决定是否合并。
 
-- **维护者**：[@wzyn20051216](https://github.com/wzyn20051216)（当前唯一具有写权限的账号）
+- **本仓库维护入口**：[@zxncvb](https://github.com/zxncvb)；上游作者信息见 [来源说明](THIRD_PARTY_NOTICES.md)
 - **不设置固定的独立审查人**，也不要求 PR 必须获得他人 approve
 - **所有合并决策由 owner 一人作出**。本项目不提供独立复核能力，也不对外声称具备该能力
 - 外部贡献者不持有写权限，无法直接推送任何受保护分支；一切外部变更只能经 PR 由 owner 合并
@@ -76,8 +78,8 @@ GH_TOKEN="$(gh auth token)" node scripts/ci/capture_governance_attestation.cjs -
 
 1. **Fork 仓库**
    ```bash
-   git clone https://github.com/yourusername/solidworks-automation-skill.git
-   cd solidworks-automation-skill
+   git clone https://github.com/zxncvb/AISolidworks.git
+   cd AISolidworks
    ```
 
 2. **创建分支**

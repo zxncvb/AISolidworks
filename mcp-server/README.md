@@ -188,7 +188,7 @@ python .\scripts\build_smithery_mcpb.py `
   .\dist\solidworks-automation-skill-1.3.0.mcpb `
   .\dist\solidworks-automation-skill-1.3.0-smithery.mcpb
 smithery mcp publish .\dist\solidworks-automation-skill-1.3.0-smithery.mcpb `
-  -n wzyn20051216/solidworks-automation-skill
+  -n zxncvb/AISolidworks
 ```
 
 Smithery 当前发布接口要求工具卡包含 `inputSchema`，而 MCPB 0.4 的静态 `tools` 项不允许该字段，因此发布包由脚本从 MCP Server 注册表自动生成，避免手工维护两套 schema。工具卡来自完整注册表（72 项：69 个原生工具 + 3 个发现入口），与运行时 `SW_MCP_DISCOVERY` 的选择无关。

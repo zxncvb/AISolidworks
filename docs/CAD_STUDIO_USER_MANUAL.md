@@ -316,4 +316,4 @@ CC Switch 不是必需依赖。不使用它时，CAD Studio 直接沿用所选 C
 - 可复现步骤和脱敏后的错误消息。
 - 是否使用 CC Switch，以及路由类型；不要提交 API Key。
 
-项目地址：<https://github.com/wzyn20051216/solidworks-automation-skill>
+项目地址：<https://github.com/zxncvb/AISolidworks>

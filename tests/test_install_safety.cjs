@@ -140,7 +140,7 @@ test('非 Windows 默认拒绝，加 flag 才放行并给出限制说明', () =>
 test('远端地址归一化忽略 .git 与尾斜杠和大小写', () => {
   const expected = normalizeRemote(REPO_URL);
   assert.equal(normalizeRemote(`${REPO_URL}/`), expected);
-  assert.equal(normalizeRemote('https://github.com/WZYN20051216/solidworks-automation-skill'), expected);
+  assert.equal(normalizeRemote('https://github.com/ZXNCVB/AISolidworks'), expected);
   assert.notEqual(normalizeRemote('https://github.com/other/repo.git'), expected);
 });
 
